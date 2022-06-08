@@ -5,7 +5,10 @@ require_once '../helpers/calculate.php';
 $filename = '../data/DataAll.txt';
 $result = getData($filename, "circle");
 
-// mengambil data dari file
+$max_total = max(array_column($result, 'result'));
+$min_total = min(array_column($result, 'result'));
+
+// mengambil semua data dari file
 $data_all = getData($filename) ?? [];
 
 $triangle = [
@@ -52,6 +55,36 @@ $circle = [
         <!-- Card Analisis Total dan Persentase -->
         <div class="card p-3 bg-light mb-3">
             <div class="card-body">
+                <div class="row">
+                    <!-- max dan min -->
+                    <div class="d-flex justify-content-center">
+                        <div class="col-md-6 mb-3">
+                            <div class="card text-center">
+                                <div class="card-header bg-dark text-light">
+                                    Perhitungan Nilai Max dan Min Yang Telah Dilakukan
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <b>Max</b>
+                                                <h1><?= $max_total; ?></h1>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="card">
+                                                <b>Min</b>
+                                                <h1><?= $min_total; ?></h1>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="row mb-3">
 
                     <!-- Segitiga -->

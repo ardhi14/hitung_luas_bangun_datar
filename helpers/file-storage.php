@@ -1,5 +1,5 @@
 <?php
-
+//fungsi pemanggilan data dari tile txt
 function getData(string $filename, string $tabel = "", bool $id = false): ?array
 {
     if (file_exists($filename)) {
@@ -25,7 +25,7 @@ function getData(string $filename, string $tabel = "", bool $id = false): ?array
         return null;
     }
 }
-
+//fungsi menyimpan data ke file txt
 function save(string $filename, string $tabel, array $data): bool
 {
     try {
